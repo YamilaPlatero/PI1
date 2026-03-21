@@ -1,0 +1,84 @@
+
+body {
+  margin: 0;
+  font-family: 'Latin', sans-serif; /* 👈 fuente moderna */
+  text-align: center; /* 👈 centra el texto */
+  background-color: #f05151a5; /* fondo oscuro */
+}
+
+h1 {
+  font-family: 'poppins'; /* 👈 fuente moderna */
+  font-size: 40px;
+  font-weight: bold;
+  color: #cb1a1a;
+  margin: 20px; /* espacio alrededor del título */
+  font-weight: 600;
+  letter-spacing: 1px;
+
+}
+
+h2 {
+  font-family: 'poppins'; /* 👈 fuente moderna */
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 20px; /* espacio debajo del subtítulo */
+}
+
+#paleta {
+  display: flex;           /* activa flexbox */
+  flex-wrap: wrap;         /* permite que las cajas pasen a otra fila si no caben */
+  justify-content: center; /* centra horizontalmente las cajas */
+  align-items: center;     /* centra verticalmente */
+  gap: 15px;               /* espacio entre cajas */
+  width: 80%;              /* ancho máximo del container */
+  margin: 0 auto;          /* centra el container en la página */
+  padding: 20px;           /* espacio interno */
+}
+
+.color-box {
+  flex: 100 60 100%; /* 👈 cada uno ocupa más espacio */
+  height: 100px; /* 👈 altura de cada caja */
+  display: flex;  /* 👈 para centrar el texto dentro de cada caja */
+  justify-content: right; /* 👈 alinea el texto a la derecha */
+  font-family:  sans-serif;
+  color: #ffffff;
+  font-weight: bold;
+  border-radius: 12px;
+}
+
+
+
+button {
+  font-family: 'Roboto', sans-serif; /* 👈 fuente moderna */
+  padding: 12px 20px; /* 👈 espacio dentro del botón */
+  font-size: 16px;  /* 👈 tamaño del texto */
+  margin-bottom: 20px; /* 👈 espacio abajo */
+  margin-left: 500px; /* 👈 lo manda a la derecha */
+  cursor: pointer; /* 👈 cambia el cursor al pasar por el botón */
+  font-weight: bold; /* 👈 texto en negrita */
+  color: white; /* 👈 color del texto */
+  background: linear-gradient(135deg, hwb(0 7% 48%), #2575fc); /* 👈 fondo degradado */
+  border-radius: 12px; /* bordes redondeados */
+  transition: 0.3s;
+  border: none;
+
+  /* sombra del boton */
+  box-shadow: 0 4px 15px hsla(0, 86%, 49%, 0.76); /* 👈 sombra roja */
+  
+}
+  
+.footer {
+  background-color: hsla(0, 0%, 100%, 0.447);
+  color: #d113e2;
+  text-align: center;
+  padding: 20px;
+
+ }
+p {
+  font-family: 'Archivo Black';
+  font-size: 20px;
+  color: #1acb5b;
+  margin-bottom: 30px; /* espacio debajo del párrafo */
+  font-weight: 400;
+}
+

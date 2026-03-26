@@ -3,24 +3,26 @@ body {
   margin: 0;
   font-family: 'Latin', sans-serif; /* 👈 fuente moderna */
   text-align: center; /* 👈 centra el texto */
-  background-color: #f05151a5; /* fondo oscuro */
+  background-color: hwb(0 100% 0%)
+
 }
 
 h1 {
   font-family: 'poppins'; /* 👈 fuente moderna */
   font-size: 40px;
   font-weight: bold;
-  color: #1acb26;
+  color: hsl(270, 30%, 43%);
   margin: 20px; /* espacio alrededor del título */
   font-weight: 600;
   letter-spacing: 1px;
+  
 
 }
 
 h2 {
   font-family: 'poppins'; /* 👈 fuente moderna */
   font-size: 24px;
-  color: #333;
+  color: #4a1d4ebc;
   margin-bottom: 20px; /* espacio debajo del subtítulo */
 }
 
@@ -35,16 +37,7 @@ h2 {
   padding: 20px;           /* espacio interno */
 }
 
-.color-box {
-  flex: 100 60 100%; /* 👈 cada uno ocupa más espacio */
-  height: 100px; /* 👈 altura de cada caja */
-  display: flex;  /* 👈 para centrar el texto dentro de cada caja */
-  justify-content: right; /* 👈 alinea el texto a la derecha */
-  font-family:  sans-serif;
-  color: #ffffff;
-  font-weight: bold;
-  border-radius: 12px;
-}
+
 
 
 
@@ -56,20 +49,21 @@ button {
   margin-left: 500px; /* 👈 lo manda a la derecha */
   cursor: pointer; /* 👈 cambia el cursor al pasar por el botón */
   font-weight: bold; /* 👈 texto en negrita */
-  color: white; /* 👈 color del texto */
-  background: linear-gradient(135deg, hwb(0 7% 48%), #2575fc); /* 👈 fondo degradado */
+  color: rgb(59, 55, 55); /* 👈 color del texto */
+  background-color: #905ec285;
+  background: linear-gradient(135deg, hwb(300 56% 28% / 0.543), #905ec2d5); /* 👈 fondo degradado */
   border-radius: 12px; /* bordes redondeados */
   transition: 0.3s;
   border: none;
 
   /* sombra del boton */
-  box-shadow: 0 4px 15px hsla(0, 86%, 49%, 0.76); /* 👈 sombra roja */
+  box-shadow: 0 4px 15px hsla(321, 60%, 77%, 0.801); /* 👈 sombra roja */
   
 }
   
 .footer {
-  background-color: hsla(0, 0%, 100%, 0.447);
-  color: #d113e2;
+  background-color: #905ec285;
+  color: #f3f0f3;
   text-align: center;
   padding: 20px;
 
@@ -77,8 +71,37 @@ button {
 p {
   font-family: 'Archivo Black';
   font-size: 20px;
-  color: #1acb5b;
+  color: #000000;
   margin-bottom: 30px; /* espacio debajo del párrafo */
   font-weight: 400;
 }
 
+
+.color-box {
+  position: relative; /* 🔥 clave */
+  width: 150px;
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: 12px;
+}
+
+.hex {
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+}
+
+/* candado encima */
+.lock-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: rgba(0, 0, 0, 0);
+  border: none;
+  color: white;
+  padding: 6px;
+  border-radius: 50%;
+  cursor: pointer;
+}

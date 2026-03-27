@@ -26,7 +26,7 @@ h2 {
   margin-bottom: 20px; /* espacio debajo del subtítulo */
 }
 
-#paleta {
+#paleta {  /* container de las cajas de colores */
   display: flex;           /* activa flexbox */
   flex-wrap: wrap;         /* permite que las cajas pasen a otra fila si no caben */
   justify-content: center; /* centra horizontalmente las cajas */
@@ -38,36 +38,13 @@ h2 {
 }
 
 
-
-
-
-button {
-  font-family: 'Roboto', sans-serif; /* 👈 fuente moderna */
-  padding: 12px 20px; /* 👈 espacio dentro del botón */
-  font-size: 16px;  /* 👈 tamaño del texto */
-  margin-bottom: 20px; /* 👈 espacio abajo */
-  margin-left: 500px; /* 👈 lo manda a la derecha */
-  cursor: pointer; /* 👈 cambia el cursor al pasar por el botón */
-  font-weight: bold; /* 👈 texto en negrita */
-  color: rgb(59, 55, 55); /* 👈 color del texto */
-  background-color: #905ec285;
-  background: linear-gradient(135deg, hwb(300 56% 28% / 0.543), #905ec2d5); /* 👈 fondo degradado */
-  border-radius: 12px; /* bordes redondeados */
-  transition: 0.3s;
-  border: none;
-
-  /* sombra del boton */
-  box-shadow: 0 4px 15px hsla(321, 60%, 77%, 0.801); /* 👈 sombra roja */
-  
-}
-  
 .footer {
   background-color: #905ec285;
   color: #f3f0f3;
   text-align: center;
   padding: 20px;
-
  }
+ 
 p {
   font-family: 'Archivo Black';
   font-size: 20px;
@@ -81,13 +58,35 @@ p {
   position: relative; /* 🔥 clave */
   width: 150px;
   height: 150px;
-  display: flex;
+  display: flex; 
   align-items: center;
-  justify-content: center;
+  justify-content:center;
+  padding: 1px;
   cursor: pointer;
   border-radius: 12px;
 }
 
+#cantidad { 
+  position: center;
+  bottom: 380px;
+  right: 600px;
+  background-color: rgb(187, 232, 50);
+  color: rgb(219, 10, 10);
+  padding: 2px 6px;
+  border-radius: 8px;
+  font-size: 12px;
+}
+
+#formato {
+  position: absolute;
+  bottom: 381px;
+  right: 700px;
+  background-color: rgba(255, 0, 0, 0.897);
+  color: rgb(0, 0, 0);
+  padding: 2px 6px;
+  border-radius: 8px;
+  font-size: 12px;
+}
 .hex {
   color: rgb(255, 255, 255);
   font-weight: bold;
@@ -98,10 +97,50 @@ p {
   position: absolute;
   top: 10px;
   right: 10px;
-  background: rgba(0, 0, 0, 0);
+  background: rgba(0,0,0,0.3); /* semitransparente para destacar */
   border: none;
   color: white;
-  padding: 6px;
-  border-radius: 50%;
+  padding: 5px 8px; /* tamaño manejable */
+  border-radius: 8px;
   cursor: pointer;
+  font-size: 16px;
 }
+
+.lock-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: rgba(0,0,0,0.3); /* semitransparente para destacar */
+  border: none;
+  color: white;
+  padding: 5px 8px; /* tamaño manejable */
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.color-wrapper {
+  width: calc(100% / 6 - 10px); /* si quieres 6 colores por fila */
+  min-width: 80px;               /* no se haga demasiado pequeño */
+}
+
+button {
+  font-family: 'Roboto', sans-serif; /* 👈 fuente moderna */
+  padding: 12px 20px; /* 👈 espacio dentro del botón */
+  font-size: 16px;  /* 👈 tamaño del texto */
+  margin-bottom: 50px; /* 👈 espacio abajo */
+  margin-left: 450px; /* 👈 lo manda a la derecha */
+  cursor: pointer; /* 👈 cambia el cursor al pasar por el botón */
+  font-weight: bold; /* 👈 texto en negrita */
+  color: rgb(59, 55, 55); /* 👈 color del texto */
+  background-color: #905ec285;
+  background: linear-gradient(135deg, hwb(300 56% 28% / 0.543), #905ec2d5); /* 👈 fondo degradado */
+  border-radius: 12px; /* bordes redondeados */
+  transition: 0.3s;
+  border: none;
+
+  /* sombra del boton */
+  box-shadow: 0 4px 15px hsla(321, 60%, 77%, 0.801); /* 👈 sombra roja */
+  
+}
+

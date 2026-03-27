@@ -1,3 +1,4 @@
+// ====== Funciones de color ======
 function colorRandom() {
   const r = Math.floor(Math.random() * 256);
   const g = Math.floor(Math.random() * 256);
@@ -29,31 +30,31 @@ function rgbToHsl({ r, g, b }) {
   return `hsl(${Math.round(h)}, ${Math.round(s*100)}%, ${Math.round(l*100)}%)`;
 }
 
-// Función para crear un nuevo color
+// ====== Crear cada color ======
 function crearColor() {
   const wrapper = document.createElement('div');
   wrapper.classList.add('color-wrapper');
 
   const div = document.createElement('div');
   div.classList.add('color-box');
+  div.setAttribute("data-locked", "false");
 
   const rgb = colorRandom();
   div.dataset.rgb = JSON.stringify(rgb);
+  div.style.backgroundColor = rgbToHex(rgb);
 
-  const hex = rgbToHex(rgb);
-  div.style.backgroundColor = hex;
-  div.setAttribute("data-locked", "false");
-
+  // Candado dentro del color
   div.innerHTML = `<button class="lock-btn">🔓</button>`;
 
-  // TEXTO DEL CÓDIGO (afuera)
+  // Código debajo del color
   const codigo = document.createElement('div');
   codigo.classList.add('codigo-texto');
-  codigo.textContent = hex;
+  codigo.textContent = rgbToHex(rgb);
 
-  // Copiar al hacer click
+  // Click en color para copiar
   div.addEventListener("click", (e) => {
-    if (e.target.classList.contains("lock-btn")) return;
+    const btn = div.querySelector(".lock-btn");
+    if (e.target === btn) return;
 
     const formato = document.getElementById("formato").value;
     const rgbActual = JSON.parse(div.dataset.rgb);
@@ -62,89 +63,71 @@ function crearColor() {
     navigator.clipboard.writeText(color);
 
     codigo.textContent = "¡Copiado!";
-    setTimeout(() => {
-      codigo.textContent = color;
-    }, 1000);
+    setTimeout(() => { codigo.textContent = color; }, 1000);
   });
 
   wrapper.appendChild(div);
   wrapper.appendChild(codigo);
-
   return wrapper;
 }
 
+// ====== Cambiar formato ======
 function cambiarFormato() {
   const formato = document.getElementById("formato").value;
   const contenedor = document.getElementById("paleta");
 
-  contenedor.querySelectorAll(".color-box").forEach(div => {
+  contenedor.querySelectorAll(".color-wrapper").forEach(wrapper => {
+    const div = wrapper.querySelector(".color-box");
+    const codigo = wrapper.querySelector(".codigo-texto");
     const rgb = JSON.parse(div.dataset.rgb);
-    const nuevoColor = formato === "hex" ? rgbToHex(rgb) : rgbToHsl(rgb);
-
-    div.querySelector(".hex").textContent = nuevoColor;
-    
+    const texto = formato === "hex" ? rgbToHex(rgb) : rgbToHsl(rgb);
+    codigo.textContent = texto;
   });
 }
-// Función para agregar evento a candados
+
+// ====== Candados ======
 function agregarEventos() {
   document.querySelectorAll(".lock-btn").forEach(btn => {
     btn.onclick = (e) => {
       e.stopPropagation();
-      const contenedor = btn.parentElement;
-      const locked = contenedor.getAttribute("data-locked") === "true";
-      contenedor.setAttribute("data-locked", !locked);
+      const div = btn.parentElement;
+      const locked = div.getAttribute("data-locked") === "true";
+      div.setAttribute("data-locked", !locked);
       btn.textContent = locked ? "🔓" : "🔒";
     }
   });
 }
 
-// Generar paleta respetando bloqueos
+// ====== Generar paleta ======
 function generarPaleta() {
   const cantidad = parseInt(document.getElementById("cantidad").value);
-  const contenedor = document.getElementById("paleta");
+  if (!cantidad) return alert("Selecciona la cantidad de colores");
 
+  const contenedor = document.getElementById("paleta");
   const wrappers = Array.from(contenedor.querySelectorAll(".color-wrapper"));
 
-  // Si no hay colores, crear
-  if (wrappers.length === 0) {
-    for (let i = 0; i < cantidad; i++) {
+  // Crear o actualizar colores
+  for (let i = 0; i < cantidad; i++) {
+    if (wrappers[i]) {
+      const div = wrappers[i].querySelector(".color-box");
+      const codigo = wrappers[i].querySelector(".codigo-texto");
+
+      if (div.getAttribute("data-locked") === "true") continue;
+
+      const rgb = colorRandom();
+      div.dataset.rgb = JSON.stringify(rgb);
+      div.style.backgroundColor = rgbToHex(rgb);
+
+      const formato = document.getElementById("formato").value;
+      codigo.textContent = formato === "hex" ? rgbToHex(rgb) : rgbToHsl(rgb);
+    } else {
       contenedor.appendChild(crearColor());
     }
-  } else {
+  }
 
-    wrappers.forEach(wrapper => {
-      const div = wrapper.querySelector(".color-box");
-      const codigo = wrapper.querySelector(".codigo-texto");
-
-      const locked = div.getAttribute("data-locked") === "true";
-
-      if (!locked) {
-        const rgb = colorRandom();
-        div.dataset.rgb = JSON.stringify(rgb);
-
-        const hex = rgbToHex(rgb);
-        div.style.backgroundColor = hex;
-
-        const formato = document.getElementById("formato").value;
-        const texto = formato === "hex" ? hex : rgbToHsl(rgb);
-
-        codigo.textContent = texto;
-      }
-    });
-
-    // Eliminar extras
-    if (wrappers.length > cantidad) {
-      for (let i = wrappers.length - 1; i >= cantidad; i--) {
-        wrappers[i].remove();
-      }
-    }
-
-    // Agregar nuevos
-    if (wrappers.length < cantidad) {
-      for (let i = wrappers.length; i < cantidad; i++) {
-        contenedor.appendChild(crearColor());
-      }
-    }
+  // Eliminar extras
+  for (let i = wrappers.length - 1; i >= cantidad; i--) {
+    wrappers[i].remove();
   }
 
   agregarEventos();

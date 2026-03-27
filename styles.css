@@ -36,6 +36,14 @@ h2 {
   margin: 0 auto;          /* centra el container en la página */
   padding: 20px;           /* espacio interno */
 }
+.codigo-texto
+{
+  font-family: 'Roboto Mono', monospace; /* 👈 fuente de código */
+  font-size: 14px;
+  color: #79006f;
+  font-weight: bold;
+  margin-top: 15px; /* espacio arriba del texto */
+}
 
 
 .footer {
@@ -70,26 +78,22 @@ p {
   position: center;
   bottom: 380px;
   right: 600px;
-  background-color: rgb(187, 232, 50);
-  color: rgb(10, 219, 198);
+  background-color: #8f2f9efa;
+  color: rgb(254, 255, 255);
   padding: 2px 6px;
   border-radius: 8px;
   font-size: 12px;
 }
 
 #formato {
-  position: absolute;
+  position: center;
   bottom: 381px;
   right: 700px;
-  background-color: rgba(255, 0, 0, 0.897);
-  color: rgb(0, 0, 0);
+  background-color: #8f2f9efa;
+  color: rgb(255, 252, 252);
   padding: 2px 6px;
   border-radius: 8px;
   font-size: 12px;
-}
-.hex {
-  color: rgb(255, 255, 255);
-  font-weight: bold;
 }
 
 /* candado encima */
@@ -97,24 +101,11 @@ p {
   position: absolute;
   top: 10px;
   right: 10px;
-  background: rgba(0,0,0,0.3); /* semitransparente para destacar */
+  background: rgba(0, 0, 0, 0); /* semitransparente para destacar */
   border: none;
-  color: white;
+  color: rgb(255, 255, 255);
   padding: 5px 8px; /* tamaño manejable */
-  border-radius: 8px;
-  cursor: pointer;
-  font-size: 16px;
-}
-
-.lock-btn {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  background: rgba(0,0,0,0.3); /* semitransparente para destacar */
-  border: none;
-  color: white;
-  padding: 5px 8px; /* tamaño manejable */
-  border-radius: 8px;
+  border-radius: 39px; /* redondeado para parecer un botón */
   cursor: pointer;
   font-size: 16px;
 }
@@ -140,7 +131,7 @@ button {
   border: none;
 
   /* sombra del boton */
-  box-shadow: 0 4px 15px hsla(321, 60%, 77%, 0.801); /* 👈 sombra roja */
+  box-shadow: 0 4px 15px hsla(296, 66%, 77%, 0.801); /* 👈 sombra roja */
   
 }
 

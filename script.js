@@ -53,7 +53,7 @@ function crearColor() {
 
   // Click en color para copiar
   div.addEventListener("click", (e) => {
-    const btn = div.querySelector(".lock-btn");
+  const btn = div.querySelector(".lock-btn");
     if (e.target === btn) return;
 
     const formato = document.getElementById("formato").value;
@@ -104,7 +104,9 @@ function generarPaleta() {
   if (!cantidad) return alert("Selecciona la cantidad de colores");
 
   const contenedor = document.getElementById("paleta");
+
   const wrappers = Array.from(contenedor.querySelectorAll(".color-wrapper"));
+  
 
   // Crear o actualizar colores
   for (let i = 0; i < cantidad; i++) {

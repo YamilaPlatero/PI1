@@ -7,7 +7,7 @@ body {
 
 }
 
-h1 {
+h1 { /* Genera tu propia paleta de colores */
   font-family: 'poppins'; /* 👈 fuente moderna */
   font-size: 40px;
   font-weight: bold;
@@ -16,65 +16,17 @@ h1 {
   font-weight: 600;
   letter-spacing: 1px;
   
-
 }
 
-h2 {
+h2 { /*Podras bloquear y copiar el codigo de tus colores en el formato que eligas */
   font-family: 'poppins'; /* 👈 fuente moderna */
   font-size: 24px;
   color: #4a1d4ebc;
   margin-bottom: 20px; /* espacio debajo del subtítulo */
+
 }
 
-#paleta {  /* container de las cajas de colores */
-  display: flex;           /* activa flexbox */
-  flex-wrap: wrap;         /* permite que las cajas pasen a otra fila si no caben */
-  justify-content: center; /* centra horizontalmente las cajas */
-  align-items: center;     /* centra verticalmente */
-  gap: 15px;               /* espacio entre cajas */
-  width: 80%;              /* ancho máximo del container */
-  margin: 0 auto;          /* centra el container en la página */
-  padding: 20px;           /* espacio interno */
-}
-.codigo-texto
-{
-  font-family: 'Roboto Mono', monospace; /* 👈 fuente de código */
-  font-size: 14px;
-  color: #79006f;
-  font-weight: bold;
-  margin-top: 15px; /* espacio arriba del texto */
-}
-
-
-.footer {
-  background-color: #905ec285;
-  color: #f3f0f3;
-  text-align: center;
-  padding: 20px;
- }
- 
-p {
-  font-family: 'Archivo Black';
-  font-size: 20px;
-  color: #3a0233;
-  margin-bottom: 30px; /* espacio debajo del párrafo */
-  font-weight: 400;
-}
-
-
-.color-box {
-  position: relative; /* 🔥 clave */
-  width: 150px;
-  height: 150px;
-  display: flex; 
-  align-items: center;
-  justify-content:center;
-  padding: 1px;
-  cursor: pointer;
-  border-radius: 12px;
-}
-
-#cantidad { 
+#cantidad { /* select de cantidad de colores */
   position: center;
   bottom: 380px;
   right: 600px;
@@ -83,39 +35,16 @@ p {
   padding: 2px 6px;
   border-radius: 8px;
   font-size: 12px;
+
 }
 
-#formato {
-  position: center;
-  bottom: 381px;
-  right: 700px;
-  background-color: #8f2f9efa;
-  color: rgb(255, 252, 252);
-  padding: 2px 6px;
-  border-radius: 8px;
-  font-size: 12px;
-}
-
-/* candado encima */
-.lock-btn {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  background: rgba(0, 0, 0, 0); /* semitransparente para destacar */
-  border: none;
-  color: rgb(255, 255, 255);
-  padding: 5px 8px; /* tamaño manejable */
-  border-radius: 39px; /* redondeado para parecer un botón */
-  cursor: pointer;
-  font-size: 16px;
-}
-
-.color-wrapper {
-  width: calc(100% / 6 - 10px); /* si quieres 6 colores por fila */
+.color-wrapper { /* contenedor de cada color y su código */
+  width: calc(90% / 6 - 8px); /* si quieres 6 colores por fila */
   min-width: 80px;               /* no se haga demasiado pequeño */
 }
 
-button {
+button { /* botón de generar paleta */
+  position: center;
   font-family: 'Roboto', sans-serif; /* 👈 fuente moderna */
   padding: 12px 20px; /* 👈 espacio dentro del botón */
   font-size: 16px;  /* 👈 tamaño del texto */
@@ -135,3 +64,79 @@ button {
   
 }
 
+#formato { /* select de formato de colores */
+  position: center;
+  bottom: 381px;
+  right: 700px;
+  background-color: #8f2f9efa;
+  color: rgb(255, 252, 252);
+  padding: 2px 6px;
+  border-radius: 8px;
+  font-size: 12px;
+
+}
+
+.lock-btn { /* candado encima */
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: rgba(0, 0, 0, 0); /* semitransparente para destacar */
+  border: none;
+  color: rgb(255, 255, 255);
+  padding: 5px 8px; /* tamaño manejable */
+  border-radius: 39px; /* redondeado para parecer un botón */
+  cursor: pointer;
+  font-size: 16px;
+
+}
+
+#paleta {  /* container de las cajas de colores */
+  display: flex;           /* activa flexbox */
+  flex-wrap: wrap;         /* permite que las cajas pasen a otra fila si no caben */
+  justify-content: center; /* centra horizontalmente las cajas */
+  align-items: center;     /* centra verticalmente */
+  gap: 15px;               /* espacio entre cajas */
+  width: 80%;              /* ancho máximo del container */
+  margin: 0 auto;          /* centra el container en la página */
+  padding: 20px;           /* espacio interno */
+
+}
+
+.color-box { /*CAJAS DE COLORES */
+  position: relative; /* 🔥 clave */
+  width: 150px;
+  height: 150px;
+  display: flex; 
+  align-items: center;
+  justify-content:center;
+  padding: 1px;
+  cursor: pointer;
+  border-radius: 12px;
+
+}
+
+.codigo-texto { /* texto del código de color debajo de cada caja */
+  font-family: 'Roboto Mono', monospace; /* 👈 fuente de código */
+  font-size: 13px;
+  color: #79006f;
+  font-weight: bold;
+  margin-top: 10px; /* espacio arriba del texto */
+
+}
+
+p { /* párrafo de contacto en el footer */
+  font-family: 'Archivo Black';
+  font-size: 20px;
+  color: #3a0233;
+  margin-bottom: 30px; /* espacio debajo del párrafo */
+  font-weight: 400;
+
+}
+
+.footer { /* estilos del footer */
+  background-color: #905ec285;
+  color: #f3f0f3;
+  text-align: center;
+  padding: 20px;
+
+ }

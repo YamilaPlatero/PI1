@@ -62,7 +62,7 @@ function crearColor() {
 
     navigator.clipboard.writeText(color);
 
-    codigo.textContent = "¡Copiado!";
+    codigo.textContent = "¡Copiado!👍";
     setTimeout(() => { codigo.textContent = color; }, 1000);
   });
 

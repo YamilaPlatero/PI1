@@ -38,6 +38,18 @@ h2 { /*Podras bloquear y copiar el codigo de tus colores en el formato que eliga
 
 }
 
+#formato { /* select de formato de colores */
+  position: center;
+  bottom: 381px;
+  right: 700px;
+  background-color: #8f2f9efa;
+  color: rgb(255, 252, 252);
+  padding: 2px 6px;
+  border-radius: 8px;
+  font-size: 12px;
+
+}
+
 .color-wrapper { /* contenedor de cada color y su código */
   width: calc(90% / 6 - 8px); /* si quieres 6 colores por fila */
   min-width: 80px;               /* no se haga demasiado pequeño */
@@ -58,35 +70,21 @@ button { /* botón de generar paleta */
   border-radius: 12px; /* bordes redondeados */
   transition: 0.3s;
   border: none;
-
-  /* sombra del boton */
-  box-shadow: 0 4px 15px hsla(296, 66%, 77%, 0.801); /* 👈 sombra roja */
+  box-shadow: 0 4px 15px #e9ec34ed; 
   
-}
-
-#formato { /* select de formato de colores */
-  position: center;
-  bottom: 381px;
-  right: 700px;
-  background-color: #8f2f9efa;
-  color: rgb(255, 252, 252);
-  padding: 2px 6px;
-  border-radius: 8px;
-  font-size: 12px;
-
 }
 
 .lock-btn { /* candado encima */
   position: absolute;
   top: 10px;
   right: 10px;
-  background: rgba(0, 0, 0, 0); /* semitransparente para destacar */
+  background: rgba(137, 127, 127, 0.274); /* semitransparente para destacar */
   border: none;
-  color: rgb(255, 255, 255);
   padding: 5px 8px; /* tamaño manejable */
   border-radius: 39px; /* redondeado para parecer un botón */
   cursor: pointer;
   font-size: 16px;
+  box-shadow: none; /* sin sombra para el botón de candado */
 
 }
 
@@ -116,7 +114,7 @@ button { /* botón de generar paleta */
 }
 
 .codigo-texto { /* texto del código de color debajo de cada caja */
-  font-family: 'Roboto Mono', monospace; /* 👈 fuente de código */
+  font-family: 'Courier New', monospace; /* 👈 fuente de código */
   font-size: 13px;
   color: #79006f;
   font-weight: bold;
@@ -125,7 +123,7 @@ button { /* botón de generar paleta */
 }
 
 p { /* párrafo de contacto en el footer */
-  font-family: 'Archivo Black';
+  font-family: 'Archivo Black','sans-serif'; /* 👈 fuente moderna */
   font-size: 20px;
   color: #3a0233;
   margin-bottom: 30px; /* espacio debajo del párrafo */
@@ -134,6 +132,7 @@ p { /* párrafo de contacto en el footer */
 }
 
 .footer { /* estilos del footer */
+  font-family: 'poppins';
   background-color: #905ec285;
   color: #f3f0f3;
   text-align: center;

@@ -1,8 +1,7 @@
 
 body {
-  margin: 0;
   font-family: 'Latin', sans-serif; /* 👈 fuente moderna */
-  text-align: center; /* 👈 centra el texto */
+  text-align: justify; /* 👈 centra el texto */
   background-color: hwb(0 100% 0%)
 
 }
@@ -15,6 +14,7 @@ h1 { /* Genera tu propia paleta de colores */
   margin: 20px; /* espacio alrededor del título */
   font-weight: 600;
   letter-spacing: 1px;
+  text-align: center;
   
 }
 
@@ -23,25 +23,23 @@ h2 { /*Podras bloquear y copiar el codigo de tus colores en el formato que eliga
   font-size: 24px;
   color: #4a1d4ebc;
   margin-bottom: 20px; /* espacio debajo del subtítulo */
-
+  text-align: center;
 }
 
+
+
 #cantidad { /* select de cantidad de colores */
-  position: center;
-  bottom: 380px;
-  right: 600px;
   background-color: #8f2f9efa;
   color: rgb(254, 255, 255);
   padding: 2px 6px;
   border-radius: 8px;
   font-size: 12px;
-
+  position: center ;
+  
 }
 
 #formato { /* select de formato de colores */
   position: center;
-  bottom: 381px;
-  right: 700px;
   background-color: #8f2f9efa;
   color: rgb(255, 252, 252);
   padding: 2px 6px;
@@ -53,15 +51,19 @@ h2 { /*Podras bloquear y copiar el codigo de tus colores en el formato que eliga
 .color-wrapper { /* contenedor de cada color y su código */
   width: calc(90% / 6 - 8px); /* si quieres 6 colores por fila */
   min-width: 80px;               /* no se haga demasiado pequeño */
+
 }
 
 button { /* botón de generar paleta */
-  position: center;
+ 
   font-family: 'Roboto', sans-serif; /* 👈 fuente moderna */
   padding: 12px 20px; /* 👈 espacio dentro del botón */
   font-size: 16px;  /* 👈 tamaño del texto */
   margin-bottom: 50px; /* 👈 espacio abajo */
-  margin-left: 450px; /* 👈 lo manda a la derecha */
+  display: block;
+  margin: 20px auto;
+  width: 90%;
+  max-width: 300px;
   cursor: pointer; /* 👈 cambia el cursor al pasar por el botón */
   font-weight: bold; /* 👈 texto en negrita */
   color: rgb(59, 55, 55); /* 👈 color del texto */
@@ -78,7 +80,7 @@ button { /* botón de generar paleta */
   position: absolute;
   top: 10px;
   right: 10px;
-  background: rgba(137, 127, 127, 0.274); /* semitransparente para destacar */
+  background: rgba(137, 127, 127, 0.027); /* semitransparente para destacar */
   border: none;
   padding: 5px 8px; /* tamaño manejable */
   border-radius: 39px; /* redondeado para parecer un botón */
@@ -92,12 +94,11 @@ button { /* botón de generar paleta */
   display: flex;           /* activa flexbox */
   flex-wrap: wrap;         /* permite que las cajas pasen a otra fila si no caben */
   justify-content: center; /* centra horizontalmente las cajas */
-  align-items: center;     /* centra verticalmente */
   gap: 15px;               /* espacio entre cajas */
-  width: 80%;              /* ancho máximo del container */
+  width: 70%;              /* ancho máximo del container */
   margin: 0 auto;          /* centra el container en la página */
   padding: 20px;           /* espacio interno */
-
+ 
 }
 
 .color-box { /*CAJAS DE COLORES */
@@ -132,10 +133,10 @@ p { /* párrafo de contacto en el footer */
 }
 
 .footer { /* estilos del footer */
-  font-family: 'poppins';
-  background-color: #905ec285;
-  color: #f3f0f3;
-  text-align: center;
-  padding: 20px;
+  font-family: 'poppins'; /* 👈 fuente moderna */
+  background-color: #905ec285; /* fondo semitransparente */
+  color: #f3f0f3; /* color del texto */
+  text-align: center; /* centra el texto */
+  padding: 20px; /* espacio dentro del footer */
 
  }

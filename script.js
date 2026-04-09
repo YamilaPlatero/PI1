@@ -30,6 +30,12 @@ function rgbToHsl({ r, g, b }) {
   return `hsl(${Math.round(h)}, ${Math.round(s*100)}%, ${Math.round(l*100)}%)`;
 }
 
+
+function obtenerFormato() {
+  return document.getElementById("formato").value;
+}
+
+
 // ====== Crear cada color ======
 function crearColor() {
   const wrapper = document.createElement('div');
@@ -43,20 +49,20 @@ function crearColor() {
   div.dataset.rgb = JSON.stringify(rgb);
   div.style.backgroundColor = rgbToHex(rgb);
 
-  // Candado dentro del color
+  // Candado de bloqueo dentro del color
   div.innerHTML = `<button class="lock-btn">🔓</button>`;
 
-  // Código debajo del color
+  // Código del color debajo
   const codigo = document.createElement('div');
   codigo.classList.add('codigo-texto');
   codigo.textContent = rgbToHex(rgb);
 
-  // Click en color para copiar
+  // Para copiar el color al hacer click
   div.addEventListener("click", (e) => {
   const btn = div.querySelector(".lock-btn");
     if (e.target === btn) return;
 
-    const formato = document.getElementById("formato").value;
+    const formato = obtenerFormato();
     const rgbActual = JSON.parse(div.dataset.rgb);
     const color = formato === "hex" ? rgbToHex(rgbActual) : rgbToHsl(rgbActual);
 
@@ -71,9 +77,9 @@ function crearColor() {
   return wrapper;
 }
 
-// ====== Cambiar formato ======
+// ====== Cambiar formato HEX/HSL======
 function cambiarFormato() {
-  const formato = document.getElementById("formato").value;
+  const formato = obtenerFormato();
   const contenedor = document.getElementById("paleta");
 
   contenedor.querySelectorAll(".color-wrapper").forEach(wrapper => {
@@ -120,7 +126,7 @@ function generarPaleta() {
       div.dataset.rgb = JSON.stringify(rgb);
       div.style.backgroundColor = rgbToHex(rgb);
 
-      const formato = document.getElementById("formato").value;
+      const formato = obtenerFormato();
       codigo.textContent = formato === "hex" ? rgbToHex(rgb) : rgbToHsl(rgb);
     } else {
       contenedor.appendChild(crearColor());

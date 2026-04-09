@@ -1,28 +1,35 @@
 
 body {
-  font-family: 'Latin', sans-serif; /* 👈 fuente moderna */
-  text-align: justify; /* 👈 centra el texto */
+  font-family: 'Latin', sans-serif; 
+  text-align: justify; 
   background-color: hwb(0 100% 0%)
 
 }
 
-h1 { /* Genera tu propia paleta de colores */
-  font-family: 'poppins'; /* 👈 fuente moderna */
+h1 { /* Colorfly Studio */
+  font-family: 'poppins'; 
   font-size: 40px;
   font-weight: bold;
   color: hsl(270, 30%, 43%);
-  margin: 20px; /* espacio alrededor del título */
-  font-weight: 600;
+  margin: 20px; 
   letter-spacing: 1px;
   text-align: center;
   
 }
 
-h2 { /*Podras bloquear y copiar el codigo de tus colores en el formato que eligas */
-  font-family: 'poppins'; /* 👈 fuente moderna */
+h2 { /*Genera tu propia paleta de colores< */
+  font-family: 'poppins'; 
+  font-size: 24px;
+  color: #46174ae2;
+  margin-bottom: 20px; 
+  text-align: center;
+}
+
+h3 { /*Podras bloquear y copiar el codigo de tus colores en el formato que eligas */
+  font-family: 'poppins'; 
   font-size: 24px;
   color: #4a1d4ebc;
-  margin-bottom: 20px; /* espacio debajo del subtítulo */
+  margin-bottom: 20px; 
   text-align: center;
 }
 
@@ -31,45 +38,45 @@ h2 { /*Podras bloquear y copiar el codigo de tus colores en el formato que eliga
 #cantidad { /* select de cantidad de colores */
   background-color: #8f2f9efa;
   color: rgb(254, 255, 255);
-  padding: 2px 6px;
+  padding: 8px 12px;
   border-radius: 8px;
-  font-size: 12px;
-  position: center ;
+  font-size: 16px;
+  
   
 }
 
 #formato { /* select de formato de colores */
-  position: center;
+  
   background-color: #8f2f9efa;
   color: rgb(255, 252, 252);
-  padding: 2px 6px;
+  padding: 8px 12px;
   border-radius: 8px;
-  font-size: 12px;
+  font-size: 16px;
 
 }
 
 .color-wrapper { /* contenedor de cada color y su código */
-  width: calc(90% / 6 - 8px); /* si quieres 6 colores por fila */
-  min-width: 80px;               /* no se haga demasiado pequeño */
-
+  width: calc(90% / 6 - 8px); 
+  min-width: 80px;               
+  
 }
 
 button { /* botón de generar paleta */
  
-  font-family: 'Roboto', sans-serif; /* 👈 fuente moderna */
-  padding: 12px 20px; /* 👈 espacio dentro del botón */
-  font-size: 16px;  /* 👈 tamaño del texto */
-  margin-bottom: 50px; /* 👈 espacio abajo */
+  font-family: 'Roboto', sans-serif; 
+  padding: 12px 20px; 
+  font-size: 20px; 
+  margin-bottom: 50px; 
   display: block;
   margin: 20px auto;
   width: 90%;
   max-width: 300px;
-  cursor: pointer; /* 👈 cambia el cursor al pasar por el botón */
-  font-weight: bold; /* 👈 texto en negrita */
-  color: rgb(59, 55, 55); /* 👈 color del texto */
+  cursor: pointer;  
+  font-weight: bold; 
+  color: rgb(59, 55, 55); 
   background-color: #905ec285;
-  background: linear-gradient(135deg, hwb(300 56% 28% / 0.543), #905ec2d5); /* 👈 fondo degradado */
-  border-radius: 12px; /* bordes redondeados */
+  background: linear-gradient(135deg, hwb(300 56% 28% / 0.543), #905ec2d5); 
+  border-radius: 12px; 
   transition: 0.3s;
   border: none;
   box-shadow: 0 4px 15px #e9ec34ed; 
@@ -80,29 +87,29 @@ button { /* botón de generar paleta */
   position: absolute;
   top: 10px;
   right: 10px;
-  background: rgba(137, 127, 127, 0.027); /* semitransparente para destacar */
+  background: rgba(137, 127, 127, 0.027); 
   border: none;
-  padding: 5px 8px; /* tamaño manejable */
-  border-radius: 39px; /* redondeado para parecer un botón */
+  padding: 5px 8px; 
+  border-radius: 39px; 
   cursor: pointer;
   font-size: 16px;
-  box-shadow: none; /* sin sombra para el botón de candado */
+  box-shadow: none;
 
 }
 
 #paleta {  /* container de las cajas de colores */
-  display: flex;           /* activa flexbox */
-  flex-wrap: wrap;         /* permite que las cajas pasen a otra fila si no caben */
-  justify-content: center; /* centra horizontalmente las cajas */
-  gap: 15px;               /* espacio entre cajas */
-  width: 70%;              /* ancho máximo del container */
-  margin: 0 auto;          /* centra el container en la página */
-  padding: 20px;           /* espacio interno */
+  display: flex;           
+  flex-wrap: wrap;         
+  justify-content: center; 
+  gap: 15px;               
+  width: 70%;              
+  margin: 0 auto;          
+  padding: 20px;           
  
 }
 
 .color-box { /*CAJAS DE COLORES */
-  position: relative; /* 🔥 clave */
+  position: relative; 
   width: 150px;
   height: 150px;
   display: flex; 
@@ -111,32 +118,35 @@ button { /* botón de generar paleta */
   padding: 1px;
   cursor: pointer;
   border-radius: 12px;
+  aspect-ratio: 1 / 1;
 
 }
 
 .codigo-texto { /* texto del código de color debajo de cada caja */
-  font-family: 'Courier New', monospace; /* 👈 fuente de código */
+  font-family: 'Courier New', monospace; 
   font-size: 13px;
   color: #79006f;
   font-weight: bold;
-  margin-top: 10px; /* espacio arriba del texto */
+  margin-top: 10px; 
 
 }
 
-p { /* párrafo de contacto en el footer */
-  font-family: 'Archivo Black','sans-serif'; /* 👈 fuente moderna */
+p { 
+  font-family: 'Archivo Black','sans-serif'; 
   font-size: 20px;
   color: #3a0233;
-  margin-bottom: 30px; /* espacio debajo del párrafo */
+  margin-bottom: 30px; 
   font-weight: 400;
 
 }
 
 .footer { /* estilos del footer */
-  font-family: 'poppins'; /* 👈 fuente moderna */
-  background-color: #905ec285; /* fondo semitransparente */
-  color: #f3f0f3; /* color del texto */
-  text-align: center; /* centra el texto */
-  padding: 20px; /* espacio dentro del footer */
+  font-family: 'poppins'; 
+  background-color: #905ec285; 
+  color: #f3f0f3; 
+  text-align: center; 
+  padding: 20px;
+  margin-top: 200px;
+  
 
  }

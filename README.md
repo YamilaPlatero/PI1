@@ -68,5 +68,5 @@ La aplicación es adaptable a distintos dispositivos (móvil y escritorio) y bus
 ✅ Listo y funcional para revisión final  
 
 🔗 **Demo del proyecto:**  
-👉 https://yamilaplatero.github.io/PI-M1/
+👉 [https://yamilaplatero.github.io/PI-M1/](https://yamilaplatero.github.io/ProyectoM1_YamilaPlatero-/)
 
